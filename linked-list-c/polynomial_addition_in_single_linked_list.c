@@ -103,25 +103,20 @@ void sum(){
             tail3=new_node;
         }
     }
-    while(pptr!=NULL){
+    while(pptr || qptr){
         struct Node* new_node=get_node();
-        new_node->coeff=pptr->coeff;
-        new_node->power=pptr->power;
-        new_node->link=NULL;
-        pptr=pptr->link;
-        if (head3==NULL){
-            head3=tail3=new_node;
-        }else{
-            tail3->link=new_node;
-            tail3=new_node;
+        if(pptr){
+            new_node->coeff=pptr->coeff;
+            new_node->power=pptr->power;
+            new_node->link=NULL;
+            pptr=pptr->link;
         }
-    }
-    while(qptr!=NULL){
-        struct Node* new_node=get_node();
-        new_node->coeff=qptr->coeff;
-        new_node->power=qptr->power;
-        new_node->link=NULL;
-        qptr=qptr->link;
+        if(qptr){
+            new_node->coeff=qptr->coeff;
+            new_node->power=qptr->power;
+            new_node->link=NULL;
+            qptr=qptr->link;
+        }
         if (head3==NULL){
             head3=tail3=new_node;
         }else{
