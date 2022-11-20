@@ -1,34 +1,23 @@
 /* INFIX TO POSTFIX USING STACK*/
-
-/*this will be optimized soon*/
-
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 
-char infix[10000];
-char postfix[10000],stack[1000];
+char infix[10000],postfix[10000],stack[1000];
 int top=-1,len=0;
 
 int iSPrecedence(char s){
     switch(s){
         case '+':
-            return 2;
-            break;
         case '-':
             return 2;
-            break;
         case '*':
-            return 4;
-            break;
         case '/':
+        case '%':
             return 4;
-            break;
         case '^':
             return 5;
-            break; 
         case '(':
-            return 0;
         case ')':
             return 0; 
     }
@@ -36,26 +25,18 @@ int iSPrecedence(char s){
 int iCPrecedence(char s){
     switch(s){
         case '+':
-            return 1;
-            break;
         case '-':
             return 1;
-            break;
         case '*':
-            return 3;
-            break;
         case '/':
+        case '%':
             return 3;
-            break;
         case '^':
             return 6;
-            break;
         case '(':
             return 9;
-            break;
         case ')':
             return 0;
-            break; 
     }
 }
 
