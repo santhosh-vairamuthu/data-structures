@@ -15,7 +15,7 @@ These are simple programs related to data structure in C which you can use for l
 1. Clone the repository:
 
    ```shell
-   git colne https://github.com/santhosh-vairamuthu/data-structures.git
+   git clone https://github.com/santhosh-vairamuthu/data-structures.git
 
 ## Contributing
 
